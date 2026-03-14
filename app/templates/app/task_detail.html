@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Szczegóły zadania</title>
+
+</head>
+
+<body>
+
+
+<h1>{{ task.title }}</h1>
+
+
+<p><strong>Opis:</strong> {{ task.description }}</p>
+
+
+<p><strong>Status:</strong> {{ task.status }}</p>
+
+
+<p><strong>Projekt:</strong> {{ task.project }}</p>
+
+
+<p><strong>Termin:</strong> {{ task.due_date }}</p>
+
+
+<h3>Tagi</h3>
+
+
+<ul>
+
+{% for tag in task.tags.all %}
+
+<li>{{ tag.name }}</li>
+
+{% empty %}
+
+<li>Brak tagów</li>
+
+{% endfor %}
+
+</ul>
+
+
+<p>
+
+<a href="{% url 'task_list' %}">Powrót do listy</a>
+
+</p>
+
+
+</body>
+
+</html>
