@@ -8,6 +8,8 @@ class Project(models.Model):
 
     class Meta:
         ordering = ["name"]
+        verbose_name = "project"
+        verbose_name_plural = "projekty"
 
     def __str__(self) -> str:
         return self.name
@@ -17,6 +19,8 @@ class Tag(models.Model):
 
     class Meta:
         ordering = ["name"]
+        verbose_name = "tag"
+        verbose_name_plural = "tag"
 
     def __str__(self) -> str:
         return self.name
@@ -53,6 +57,8 @@ class Task(models.Model):
 
     class Meta:
         ordering = ["-created_at"]
+        verbose_name = "zadania"
+        verbose_name_plural = "zadania"
 
     def __str__(self) -> str:
         return self.title
